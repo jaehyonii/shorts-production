@@ -1,0 +1,23 @@
+2025-06-21 15:07:51,457 - root - INFO - 프로그램이 시작되었습니다.
+2025-06-21 15:07:51,458 - root - ERROR - 데이터베이스 연결에 실패했습니다.
+2025-06-21 15:09:46,923 - root - INFO - 프로그램이 시작되었습니다.
+2025-06-21 15:09:46,923 - root - ERROR - 뉴스 크롤링 실패: Invalid URL 'ddddd': No scheme supplied. Perhaps you meant https://ddddd?
+2025-06-21 15:27:35,418 - __main__ - INFO - 프로그램이 시작되었습니다.
+2025-06-21 15:27:35,423 - crawl_naver_news - ERROR - Error fetching URL: Invalid URL 'ddddd': No scheme supplied. Perhaps you meant https://ddddd?
+2025-06-21 15:27:35,423 - __main__ - ERROR - 뉴스 크롤링 실패: Invalid URL 'ddddd': No scheme supplied. Perhaps you meant https://ddddd?
+2025-06-21 16:12:27,512 - __main__ - INFO - 프로그램이 시작되었습니다.
+2025-06-21 16:12:27,674 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-06-21 16:12:31,847 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-06-21 16:12:31,847 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-06-21 16:50:31,391 - __main__ - INFO - 프로그램이 시작되었습니다.
+2025-06-21 16:50:31,501 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-06-21 16:50:35,745 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-06-21 16:50:35,745 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-06-21 16:51:29,537 - __main__ - INFO - 프로그램이 시작되었습니다.
+2025-06-21 16:51:29,691 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-06-21 16:51:34,619 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-06-21 16:51:34,626 - google_genai.models - INFO - AFC remote call 1 is done.
+2025-06-21 16:53:43,248 - __main__ - INFO - 프로그램이 시작되었습니다.
+2025-06-21 16:53:43,366 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2025-06-21 16:53:48,188 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2025-06-21 16:53:48,194 - google_genai.models - INFO - AFC remote call 1 is done.
