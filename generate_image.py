@@ -22,10 +22,10 @@ if not gemini_api_key:
 # 4. 가져온 API 키로 Gemini를 설정합니다.
 client = genai.Client(api_key=gemini_api_key)
 
-def generate_image(save_path: str, description: str):
+def generate_image(save_path: str, transcript: str):
 	response = client.models.generate_content(
 		model="gemini-2.0-flash-preview-image-generation",
-		contents=description,
+		contents=f'generate appropriate image for the following dialogue: {transcript}',
 		config=types.GenerateContentConfig(
 		response_modalities=['TEXT', 'IMAGE']
 		)
@@ -37,4 +37,3 @@ def generate_image(save_path: str, description: str):
 		elif part.inline_data is not None:
 			image = Image.open(BytesIO((part.inline_data.data)))
 			image.save(save_path)
-			image.show()
