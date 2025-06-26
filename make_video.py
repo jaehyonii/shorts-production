@@ -75,7 +75,7 @@ def make_video(json_summary: dict):
     title_clip = TextClip(
             text=title, 
             font=title_font,
-            font_size=50,
+            font_size=45,
             color='white',
             text_align='left',
             horizontal_align='center',
@@ -89,7 +89,7 @@ def make_video(json_summary: dict):
         txt_clip = TextClip(
             text=sentences[i], 
             font=content_font,
-            font_size=50,
+            font_size=45,
             size=(900, 500),
             color='white',
             interline=10,
