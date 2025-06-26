@@ -37,7 +37,7 @@ if __name__ == "__main__":
 	os.makedirs('audios', exist_ok=True)
 
 	# 크롤링할 네이버 뉴스 URL
-	target_url = input() # URL 입력
+	target_url = input('URL을 입력하세요: ') # URL 입력
  
 	###### 기사 크롤링 #####
 	print('article crawling')
