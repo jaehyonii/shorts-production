@@ -35,7 +35,7 @@ def generate_audio(transciption: str):
 	try:
 		response = client.models.generate_content(
 			model="gemini-2.5-flash-preview-tts",
-			contents=f'Read this at 1.3 times the default speed: {transciption}',
+			contents=f'Read this at 1.2 times the default speed: {transciption}',
 			config=types.GenerateContentConfig(
 				response_modalities=["AUDIO"],
 				speech_config=types.SpeechConfig(
