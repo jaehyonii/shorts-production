@@ -37,7 +37,7 @@ if __name__ == "__main__":
 	os.makedirs('audios', exist_ok=True)
 
 	# 크롤링할 네이버 뉴스 URL
-	target_url = "https://n.news.naver.com/mnews/article/421/0008329863" # 예시 URL
+	target_url = "https://n.news.naver.com/mnews/article/008/0005211956" # 예시 URL
  
 	###### 기사 크롤링 #####
 	print('article crawling')
@@ -75,17 +75,17 @@ if __name__ == "__main__":
 		json_summary = json.load(file)
   
 	try:
-		for idx, value in enumerate(list(json_summary.values())[1:]):
+		for idx, value in enumerate(json_summary['summary_and_images']):
 			print(f'generate audio{idx+1}')
-			transcript = value['transcript']
+			sentence = value['sentence']
 			##### TTS 생성 #####
-			audio = generate_audio(transcript)
+			audio = generate_audio(sentence)
 			wave_file(f'./audios/audio{idx+1}.wav', audio)
 			print(f'generate audio{idx+1} completed')
    
 			##### 이미지 생성 #####
 			print(f'generate image{idx+1}')
-			generate_image(f'./images/image{idx+1}.png', transcript)
+			generate_image(f'./images/image{idx+1}.png', value['image_prompt'])
 			print(f'generate image{idx+1} completed')
 	except:
 		main_logger.info("프로그램이 종료되었습니다.")
@@ -105,4 +105,4 @@ if __name__ == "__main__":
 	# print('generate video')  
 	# make_video(json_summary)
 	# print('generate video completed')
-	# ####################3
+	# ####################

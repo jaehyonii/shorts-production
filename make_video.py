@@ -11,18 +11,22 @@ from moviepy import (
     concatenate_videoclips
 )
 from moviepy import vfx, afx
+import json
 
-bg_color = [26,43,60]
-rgb_naver = [42,195,8]
-title_font = '../font/Jalnan2TTF.ttf'
-content_font = '../font/NotoSansKR-SemiBold.ttf'
+with open(f'{__file__}/../config.json', 'r', encoding='utf-8') as file:
+    config = json.load(file)
+    
+channel=config['channel']
+bg_color=config['bg_color']
+title_font = f'{__file__}/../font/Jalnan2TTF.ttf'
+content_font = f'{__file__}/../font/NotoSansKR-SemiBold.ttf'
 
 def make_video(json_summary: dict):
     # --- 입력 파일 경로 ---
-    image_files = [f'./images/image{i}.png' for i in range(1, len(json_summary))]  # 사용할 이미지 파일 경로
-    audio_files = [f'./audios/audio{i}.wav' for i in range(1, len(json_summary))] # 사용할 WAV 오디오 파일 경로
-    title = list(json_summary.values())[0]
-    transcripts = [v['transcript'] for v in list(json_summary.values())[1:]] # 사용할 WAV 오디오 파일 경로
+    image_files = [f'./images/image{i+1}.png' for i in range(len(json_summary['summary_and_images']))]  # 사용할 이미지 파일 경로
+    audio_files = [f'./audios/audio{i+1}.wav' for i in range(len(json_summary['summary_and_images']))] # 사용할 WAV 오디오 파일 경로
+    title = json_summary['title']
+    sentences = [v['sentence'] for v in json_summary['summary_and_images']] # 사용할 WAV 오디오 파일 경로
     output_file = "result.mp4"   # 최종 저장될 MP4 영상 파일 경로
     
     # 완성된 '영상 조각'들을 담을 리스트
@@ -57,9 +61,9 @@ def make_video(json_summary: dict):
     
     # 채널명 생성
     author_clip = TextClip(
-            text='정읽남', 
+            text=channel, 
             font=title_font,
-            font_size=200,
+            font_size=150,
             color='white',
             text_align='center',
             horizontal_align='center',
@@ -83,7 +87,7 @@ def make_video(json_summary: dict):
     transcript_track_segments = []
     for i, seg in enumerate(content_track_segments):
         txt_clip = TextClip(
-            text=transcripts[i], 
+            text=sentences[i], 
             font=content_font,
             font_size=50,
             size=(900, 500),
