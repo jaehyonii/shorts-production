@@ -98,7 +98,7 @@ if __name__ == "__main__":
 	############################
  
   	# ##### 실험 #####
-	# os.chdir('0000000000')
+	# os.chdir('20250626115751')
 	# with open('./summary.json', 'r', encoding='utf-8') as file:
 	# 	# json.load()를 사용하여 파일 내용을 딕셔너리로 로드
 	# 	json_summary = json.load(file)
